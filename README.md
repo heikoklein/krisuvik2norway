@@ -4,7 +4,7 @@
 
 The icelandic volcano Krìsuvik is currently erupting, but so far not emitting volcanic ash. 
 Depending on new fissures in the volcano, ash emissions can occur at any time. Therefore, MET Norway
-is running the eemep volcanic ash transport model 4 times a day simulating an ash emission start at
+is running the eemep volcanic ash transport model 4 times a day simulating an ash emission starting at
 00:00, 06:00, 12:00 and 18:00 (all times UTC). The models are started as followed
 
 ```
@@ -19,20 +19,22 @@ is running the eemep volcanic ash transport model 4 times a day simulating an as
 ```
 
 The jobs are queued after this timestep and usually results arrive between 20 min and 3 hours after
-the start. Delays appear, both of technical reasons, but also because other volcanoes might need to
-run prioritized.
+the start. Delays appear, both for technical reasons, but also due to other volcanos running on higher priority.
 
 Results are added to the directory at https://thredds.met.no/thredds/catalog/metusers/heikok/ash/krisuvik/catalog.html
-The important files are  `eemep_hourInst_*.nc` where `*` is a timestamp when the modelrun started.
+The important files are  `eemep_hourInst_*.nc` where `*` is a timestamp when the model actually started.
 
 ## Task
 
 Notify duty-meteorologists as soon as new results are available. The notification should included a message about
 when and where Norwegian land is hit by an ash-column exceeding 0.2g/m2 during the eemep-run.
 
+For simplicity, notifications should be initially implemented as configurable email.
+
 ## Constraints
 
-The code will be deployed on an open-stack cloud computer using ubuntu 20.04.
+The code will be deployed on an open-stack cloud computer using ubuntu 20.04. 
+Deployment instructions need to be simple and clear.
 
 ## Further information
 
